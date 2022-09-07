@@ -2,30 +2,16 @@
 #include <string>
 #include <sys\timeb.h>
 
+#include "sort.h"
+
 using namespace std;
 
 void stringReverse(string String) {
     string newString;
     for (int i = 0; newString.length() < String.length(); i++) {
-        newString += String[String.length()-(newString.length()+1)];
+        newString += String[String.length() - (newString.length() + 1)];
     }
     cout << newString << endl;
-}
-
-void bubbleSort(int array[], int arrayLength) {
-    for (int i = 0; i < arrayLength - 1; ++i) {
-        bool swapped = false;
-        for (int j = 0; j < arrayLength - i - 1; ++j) {
-            if (array[j] > array[j + 1]) {
-                swap(array[j], array[j + 1]);
-                swapped = true;
-            }
-        }
-        if (!swapped) break;
-    }
-    for (int i = 0; i < arrayLength; i++) {
-        cout << array[i] << endl;
-    }
 }
 
 void testing () {
@@ -70,10 +56,10 @@ int main() {
         56,
         7
     };
-    int listSize = sizeof(list) / sizeof(int);
-    bubbleSort(list, listSize);
-    stringReverse("Why hello there my friend!");
-    testing();
+    int arrayLength = sizeof(list) / sizeof(int);
+    bubbleSort(list, arrayLength);
+    cout << endl << endl;
+    selectionSort(list, arrayLength);
     return 1;
 }
 

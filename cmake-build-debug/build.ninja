@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/lochy/CLionProjects/Testing/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/lochy/Documents/GitHub/Cpp-Algorithims/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Testing
 
@@ -49,7 +49,7 @@ cmake_ninja_workdir = C$:/Users/lochy/CLionProjects/Testing/cmake-build-debug/
 
 build cmake_object_order_depends_target_Testing: phony || CMakeFiles/Testing.dir
 
-build CMakeFiles/Testing.dir/main.cpp.obj: CXX_COMPILER__Testing_Debug C$:/Users/lochy/CLionProjects/Testing/main.cpp || cmake_object_order_depends_target_Testing
+build CMakeFiles/Testing.dir/main.cpp.obj: CXX_COMPILER__Testing_Debug C$:/Users/lochy/Documents/GitHub/Cpp-Algorithims/main.cpp || cmake_object_order_depends_target_Testing
   DEP_FILE = CMakeFiles\Testing.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Testing.dir
@@ -81,7 +81,7 @@ build Testing.exe: CXX_EXECUTABLE_LINKER__Testing_Debug CMakeFiles/Testing.dir/m
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\lochy\CLionProjects\Testing\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\lochy\Documents\GitHub\Cpp-Algorithims\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -92,7 +92,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\lochy\CLionProjects\Testing\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\lochy\CLionProjects\Testing -BC:\Users\lochy\CLionProjects\Testing\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D C:\Users\lochy\Documents\GitHub\Cpp-Algorithims\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\lochy\Documents\GitHub\Cpp-Algorithims -BC:\Users\lochy\Documents\GitHub\Cpp-Algorithims\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -110,7 +110,7 @@ build Testing: phony Testing.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/lochy/CLionProjects/Testing/cmake-build-debug
+# Folder: C:/Users/lochy/Documents/GitHub/Cpp-Algorithims/cmake-build-debug
 
 build all: phony Testing.exe
 
