@@ -20,28 +20,29 @@ void bubbleSort(int array[], int arrayLength) {
     }
 }
 
-int findMinIndex(const int array[], int start, int arraySize) {
-    int min_index = start;
-
-    start++;
-
-    while(start < arraySize) {
-        if(array[start] < array[min_index])
-            min_index = start;
-
-        start++;
+void selectionSort(int array[], int arraySize) {
+    for (int i = 0; i < arraySize; i++) {
+        int e = i;
+        int min_index = e;
+        e++;
+        while(e < arraySize) {
+            if (array[e] < array[min_index]) min_index = e;
+            e++;
+        }
+        if (i != min_index) swap(array[i], array[min_index]);
     }
-
-    return min_index;
+    for (int i = 0; i < arraySize; i++) cout << array[i] << endl;
 }
 
-// TODO: Print the array to the console
-void selectionSort(int array[], int arraySize) {
-    for (int i = 0; i < arraySize; ++i) {
-        int min_index = findMinIndex(array, i, arraySize);
-
-        if (i != min_index) {
-            swap(array[i], array[min_index]);
+void insertionSort(int array[], int arraySize) {
+    for (int i = 0; i < arraySize; i++) {
+        int key = array[i];
+        int j = i - 1;
+        while (j >= 0 && array[j] > key ) {
+            array[j+i] = array[i];
+            j--;
         }
+        array[j+1] = key;
     }
+    for (int i = 0; i < arraySize; i++) cout << array[i] << endl;
 }

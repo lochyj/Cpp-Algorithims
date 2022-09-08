@@ -33,6 +33,22 @@ void testing () {
     cout << endl << diff << "ms" << endl;
 }
 
+class Performance {
+    private: struct timeb start{};
+    private: struct timeb end{};
+
+public:
+    void begin() {
+        ftime(&start);
+    }
+
+    long finish() {
+        ftime(&end);
+        return int (1000.0 * (end.time - start.time) + (end.millitm - start.millitm));
+
+    }
+};
+
 int main() {
     int list[20] = {
         1,
@@ -57,9 +73,28 @@ int main() {
         7
     };
     int arrayLength = sizeof(list) / sizeof(int);
+
+    cout << "Bubble sort:" << endl;
+    auto *a = new Performance;
+    a->begin();
     bubbleSort(list, arrayLength);
-    cout << endl << endl;
+    cout << "Finished in: " << a->finish() << "ms" << endl;
+    cout << "--" << endl << endl;
+
+    cout << "Selection sort:" << endl;
+    auto *b = new Performance;
+    b->begin();
     selectionSort(list, arrayLength);
+    cout << "Finished in: " << b->finish() << "ms" << endl;
+    cout << "--" << endl << endl;
+
+    cout << "Insertion sort:" << endl;
+    auto *c = new Performance;
+    c->begin();
+    insertionSort(list, arrayLength);
+    cout << "Finished in: " << c->finish() << "ms" << endl;
+    cout << "--" << endl << endl;
+
     return 1;
 }
 
