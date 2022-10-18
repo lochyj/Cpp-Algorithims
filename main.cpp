@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
 #include <sys\timeb.h>
+#include <iosfwd>
+#include <fstream>
 
-#include "sort.h"
+#include "./sort.h"
+#include "./math.h"
 
 using namespace std;
 
@@ -12,25 +15,6 @@ void stringReverse(string String) {
         newString += String[String.length() - (newString.length() + 1)];
     }
     cout << newString << endl;
-}
-
-void testing () {
-    struct timeb start{};
-    struct timeb end{};
-    int diff;
-    ftime(&start);
-
-    for (int i = 0; i < 1001; i++) {
-        cout << i;
-        if (i == 1000) {
-            break;
-        }
-    }
-
-    ftime(&end);
-    diff = (int) (1000.0 * (end.time - start.time) + (end.millitm - start.millitm));
-
-    cout << endl << diff << "ms" << endl;
 }
 
 class Performance {
@@ -50,28 +34,7 @@ public:
 };
 
 int main() {
-    int list[20] = {
-        1,
-        2,
-        5,
-        4,
-        7,
-        -2,
-        3,
-        4,
-        11,
-        67,
-        10,
-        5,
-        35,
-        8,
-        7,
-        78,
-        3,
-        6,
-        56,
-        7
-    };
+    int list[20] = { 1, 2, 5, 4, 7, -2, 3, 4, 11, 67, 10, 5, 35, 8, 7, 78, 3, 6, 56, 7};
     int arrayLength = sizeof(list) / sizeof(int);
 
     cout << "Bubble sort:" << endl;
@@ -80,6 +43,7 @@ int main() {
     bubbleSort(list, arrayLength);
     cout << "Finished in: " << a->finish() << "ms" << endl;
     cout << "--" << endl << endl;
+    delete a;
 
     cout << "Selection sort:" << endl;
     auto *b = new Performance;
@@ -87,6 +51,7 @@ int main() {
     selectionSort(list, arrayLength);
     cout << "Finished in: " << b->finish() << "ms" << endl;
     cout << "--" << endl << endl;
+    delete b;
 
     cout << "Insertion sort:" << endl;
     auto *c = new Performance;
@@ -94,6 +59,12 @@ int main() {
     insertionSort(list, arrayLength);
     cout << "Finished in: " << c->finish() << "ms" << endl;
     cout << "--" << endl << endl;
+    delete c;
+
+    ifstream in("./data.txt", ios_base::in);
+    cout <<
+
+    cout << arctan(1, 1);
 
     return 1;
 }
